@@ -1,1 +1,76 @@
-<mxfile host="app.diagrams.net" modified="2021-09-15T13:36:59.618Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36" etag="1u11W12igv8v0-yMUIst" version="15.2.7" type="device"><diagram id="SR651_G21nLTauKi2p2u" name="Page-1">3VrZbqMwFP0aHqdihzyyJDMP7ahSq1meKgpugkTiiDjbfP0YsMFb1EUEkkgRsi/XxpxzuL7XimZFy8P3MlkvHmAGCs3Us4NmxZppGrZpatVPz46NxXOJYV7mGXHqDE/5P0CMOrFu8wxsOEcEYYHyNW9M4WoFUsTZkrKEe97tDRb8U9fJHEiGpzQpZOvvPEOLxuqbXmf/AfL5gj7ZcCfNnWVCncmbbBZJBveMyZpqVlRCiJrW8hCBogKP4tKMm5242y6sBCv0kQHHZ/fpIb5/mR2eX37ZCL5Fu5/fyCy7pNiSF9ZiXZtE1TV06mvMtO366lKLofn05dCRIobfc101t8siSBEsNSvcgRLlGNP75BUUj3CToxyusMsrRAguGYegyOfVDQTX2LpAywJ3DNyEW1TkKxC1LOvYSNaOx4LDSVCMFmqsUQCXAJVH7EIG2GT9RJ1tf99xbRHTgqHZJbaEqGveTtwRgBuEg0/wYar5mNWIT+urX+Nu1O0A+9Zdu75a9bUeEhrMkJAf2PrI5OEl4i8Ld8L9IkfgaZ2k1Z09/rh5QnrA3nB58A1DBt8wFej750Lfeh99j4HSZdqzi4LS1MeG0lZDKWuwCSOeFHB8YqkEXiu94yCmw+v40wiZ+FyotM3J2Hw4Sj4CgwGRDfExETWRtk7Rb1XPUhVQxBs3kzYiyk3LFqX5krix/LG5cWVuJIBWWVBlM7iXFslmk6c8Lvjdy+Mfsi/Wnb9V586h3fjA3oyP3BYKMikJEtDEWVdSzgF6b+uSUWdQdRSgUlsJigTlO34ZKqTJEx5hjhfYkuoJ35vI1QZuyxSQQWySJMzTEk8nsoSJGhikiTA5yZFxW1cOG0kZLS5fF4t/E2KxbkIsljCR9zGx9CUFmi9duRbsm9CCGDjEic6tBcUG35cWLN9/Rw117xGUOX4NUPYvEecWJGILxabtDCsRU13sB5+vHa+65Hd4FlxPTv+GLflP1/zK1DxkyJFz8bZscgu88PC1xK05apG7kJzbUZT6k0FBV5f6gVxUxozybe7gqwNdZ+okobydMqxETBVlMFVRdFncKGpVFTdistMfNyfODj5zBDAqoMKG4SoKzGHFri7+CaAhDf914B8XOIcDznNk4PxBgVNU5uTUpFWixQTl9vNngrLJBwrSnUmRpGk7zMw2dfa5jZib0LkEvQsBxDdl2gx9UN4mMm99JcMu/lTGTYbNUU9afJ5sT/9iNiwWz+7A2TB9fD8audNtW9SJO7ZORj1k6U0nQtXkTgbWiaJq6iuWDHk6O+opy7nEIE10bjEoarVrFMOo5ynn2kEGF4OihrxGMbg3KQa7LzHgbvcnnca9+6uTNf0P</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-09-30T09:24:58.350Z" agent="5.0 (Windows)" etag="lMCyl7fV3nR5VAToOopr" version="15.3.8" type="github">
+  <diagram id="SR651_G21nLTauKi2p2u" name="Page-1">
+    <mxGraphModel dx="1038" dy="495" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p7CNFIOG4ytNEs_HwDj7-6" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="yT6SMDL_FxT_V4tofCvN-1" target="yT6SMDL_FxT_V4tofCvN-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p7CNFIOG4ytNEs_HwDj7-7" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="yT6SMDL_FxT_V4tofCvN-1" target="yT6SMDL_FxT_V4tofCvN-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p7CNFIOG4ytNEs_HwDj7-8" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="yT6SMDL_FxT_V4tofCvN-1" target="yT6SMDL_FxT_V4tofCvN-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p7CNFIOG4ytNEs_HwDj7-9" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="yT6SMDL_FxT_V4tofCvN-1" target="yT6SMDL_FxT_V4tofCvN-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yT6SMDL_FxT_V4tofCvN-1" value="Менеджер" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="40" y="240" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yT6SMDL_FxT_V4tofCvN-2" value="Поиск футболиста" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="120" y="110" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="yT6SMDL_FxT_V4tofCvN-3" value="Позиция" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="160" y="200" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="yT6SMDL_FxT_V4tofCvN-4" value="Истечение&lt;br&gt;контракта" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="140" y="290" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="yT6SMDL_FxT_V4tofCvN-5" value="Средняя оценка в матче" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="60" y="370" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="p7CNFIOG4ytNEs_HwDj7-2" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="yT6SMDL_FxT_V4tofCvN-21" target="yT6SMDL_FxT_V4tofCvN-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p7CNFIOG4ytNEs_HwDj7-3" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="yT6SMDL_FxT_V4tofCvN-21" target="yT6SMDL_FxT_V4tofCvN-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p7CNFIOG4ytNEs_HwDj7-4" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="yT6SMDL_FxT_V4tofCvN-21" target="yT6SMDL_FxT_V4tofCvN-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p7CNFIOG4ytNEs_HwDj7-5" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="yT6SMDL_FxT_V4tofCvN-21" target="yT6SMDL_FxT_V4tofCvN-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p7CNFIOG4ytNEs_HwDj7-10" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="yT6SMDL_FxT_V4tofCvN-21" target="yT6SMDL_FxT_V4tofCvN-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yT6SMDL_FxT_V4tofCvN-21" value="Футболист" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="400" y="220" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yT6SMDL_FxT_V4tofCvN-22" value="Предложение&lt;br&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="480" y="100" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yT6SMDL_FxT_V4tofCvN-23" value="Трансферная стоимость" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="350" y="85" width="90" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="yT6SMDL_FxT_V4tofCvN-24" value="Контракт" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="520" y="230" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yT6SMDL_FxT_V4tofCvN-25" value="Клуб" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="525" y="300" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yT6SMDL_FxT_V4tofCvN-26" value="Согласен на переход или нет" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="490" y="360" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yT6SMDL_FxT_V4tofCvN-29" value="" style="endArrow=none;html=1;endFill=0;" parent="1" target="yT6SMDL_FxT_V4tofCvN-22" edge="1" source="yT6SMDL_FxT_V4tofCvN-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="430" y="250" as="sourcePoint" />
+            <mxPoint x="480" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
