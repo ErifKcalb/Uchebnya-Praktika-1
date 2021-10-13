@@ -7,12 +7,6 @@ using Microsoft.Extensions.Logging;
 
 namespace Uchebnya_Praktika_1.Controllers
 {
-    
-        
-
-    
-
-
     [ApiController]
     [Route("[Manager]")]
     public class ManagerController : ControllerBase
