@@ -1,39 +1,41 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using FirstRepository.Domain;
+using FirstRepository.Repository;
 
-namespace Uchebnya_Praktika_1.Controllers
+namespace FirstRepository.Controllers
 {
-    
     [ApiController]
-    [Route("Club")]
+    [Route("/club")]
     public class ClubController : ControllerBase
     {
-
-
-
-
-        [HttpGet]
-        [Route("SearchManager")]
-        public string SearchManager(string str)
+        [HttpPut("Create")]
+        public Club Create(Club club)
         {
-            return str; //Поиск менеджера
+            Storage.clubStorage.Create(club);
+            return Storage.clubStorage.Read(club.Id);
         }
 
-        [HttpGet]
-        [Route("BuyFootballPlayer")]
-        public string BuyFootballPlayer(string str)
+        [HttpGet("Read")]
+        public Club Read(int Id)
         {
-            return str; //Купить футболиста
+            return Storage.clubStorage.Read(Id);
         }
+
+        [HttpPatch("Update")]
+        public Club Update(int Id, Club newclub)
+        {
+            return Storage.clubStorage.Update(Id, newclub);
+        }
+
+        [HttpDelete("Delete")]
+        public bool Delete(int Id)
+        {
+            return Storage.clubStorage.Delete(Id);
         }
     }
-
-
-
-
-    
-
+}

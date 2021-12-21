@@ -10,32 +10,32 @@ using FirstRepository.Repository;
 namespace FirstRepository.Controllers
 {
     [ApiController]
-    [Route("/manager")]
-    public class ManagerController : ControllerBase
+    [Route("/att")]
+    public class AcceptTheTransetionController : ControllerBase
     {
         [HttpPut("Create")]
-        public Manager Create(Manager manager)
+        public AcceptTheTransetion Create(AcceptTheTransetion att)
         {
-            Storage.managerStorage.Create(manager);
-            return Storage.managerStorage.Read(manager.Id);
+            Storage.attStorage.Create(att);
+            return Storage.attStorage.Read(att.Id);
         }
 
         [HttpGet("Read")]
-        public Manager Read(int Id)
+        public AcceptTheTransetion Read(int Id)
         {
-            return Storage.managerStorage.Read(Id);
+            return Storage.attStorage.Read(Id);
         }
 
         [HttpPatch("Update")]
-        public Manager Update(int Id, Manager newManager)
+        public AcceptTheTransetion Update(int Id, AcceptTheTransetion newatt)
         {
-            return Storage.managerStorage.Update(Id, newManager);
+            return Storage.attStorage.Update(Id, newatt);
         }
 
         [HttpDelete("Delete")]
         public bool Delete(int Id)
         {
-            return Storage.managerStorage.Delete(Id);
+            return Storage.attStorage.Delete(Id);
         }
     }
 }

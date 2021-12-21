@@ -10,32 +10,32 @@ using FirstRepository.Repository;
 namespace FirstRepository.Controllers
 {
     [ApiController]
-    [Route("/manager")]
-    public class ManagerController : ControllerBase
+    [Route("/contract")]
+    public class ContractController : ControllerBase
     {
         [HttpPut("Create")]
-        public Manager Create(Manager manager)
+        public Contract Create(Contract contract)
         {
-            Storage.managerStorage.Create(manager);
-            return Storage.managerStorage.Read(manager.Id);
+            Storage.contractStorage.Create(contract);
+            return Storage.contractStorage.Read(contract.Id);
         }
 
         [HttpGet("Read")]
-        public Manager Read(int Id)
+        public Contract Read(int Id)
         {
-            return Storage.managerStorage.Read(Id);
+            return Storage.contractStorage.Read(Id);
         }
 
         [HttpPatch("Update")]
-        public Manager Update(int Id, Manager newManager)
+        public Contract Update(int Id, Contract newcontract)
         {
-            return Storage.managerStorage.Update(Id, newManager);
+            return Storage.contractStorage.Update(Id, newcontract);
         }
 
         [HttpDelete("Delete")]
         public bool Delete(int Id)
         {
-            return Storage.managerStorage.Delete(Id);
+            return Storage.contractStorage.Delete(Id);
         }
     }
 }
