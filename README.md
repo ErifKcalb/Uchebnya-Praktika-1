@@ -75,6 +75,7 @@ Transfermarkt работает засчет системы база данных
 На основании ER-диаграммы создали классы. Примеры классов "Футболист" и "Менеджер" представленны на листингах 1 и 2 соответственно.
 
 Листинг 1 - Класс "Футболист"
+
     public class Footballer
     {
         public int Id { get; set; }
@@ -89,6 +90,7 @@ Transfermarkt работает засчет системы база данных
             
 
 Листинг 2 - Класс "Менеджер"
+
     public class Manager
     {
         public int Id { get; set; }
@@ -99,6 +101,7 @@ Transfermarkt работает засчет системы база данных
 Затем отпределили где они будут храниться, создав репозитории ......
 
 Листинг 3 - Репрезиторий для класса "Футболист"
+
     public class FootballerStorage
     {
         private readonly Dictionary<int, Footballer> _Footballers = new();
@@ -127,6 +130,7 @@ Transfermarkt работает засчет системы база данных
     }
 
 Листинг 4 - Общеее хранилище
+
     public class Storage
     {
         public static readonly FootballerStorage footballerStorage = new();
@@ -142,6 +146,7 @@ Transfermarkt работает засчет системы база данных
 Разработали набор web-методов, включая 4 базисные операции CRUD, для каждой сущности, отражающих предметную область. Примеры контроллеров для классов "Футболист" и "Менеджер" представлены на листингах 5 и 6.
 
 Листинг 5 - Контроллер для класса "Футболист"
+
 [ApiController]
     [Route("/footballer")]
     public class FootballerController : ControllerBase
@@ -173,6 +178,7 @@ Transfermarkt работает засчет системы база данных
     }
   
 Листинг 6 - Контроллер для класса "Менеджер"
+
     [ApiController]
     [Route("/manager")]
     public class ManagerController : ControllerBase
