@@ -147,7 +147,7 @@ Transfermarkt работает засчет системы база данных
 
 Листинг 5 - Контроллер для класса "Футболист"
 
-[ApiController]
+    [ApiController]
     [Route("/footballer")]
     public class FootballerController : ControllerBase
     {
