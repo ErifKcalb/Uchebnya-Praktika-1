@@ -72,6 +72,137 @@ Transfermarkt работает засчет системы база данных
                                                 Рисунок 3 - Диаграмма «сущность-связь»
 ***
 ## 3.2 Реализация системы
+На основании ER-диаграммы создали классы. Примеры классов "Футболист" и "Менеджер" представленны на листингах 1 и 2 соответственно.
+
+Листинг 1 - Класс "Футболист"
+    public class Footballer
+    {
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string SecondName { get; set; }
+        public string Position { get; set; }
+        public int Age { get; set; }
+        public string Club { get; set; }
+        public string Country { get; set; }
+        public decimal Money { get; set; }
+    }
+            
+
+Листинг 2 - Класс "Менеджер"
+    public class Manager
+    {
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string SecondName { get; set; }
+    }
+
+Затем отпределили где они будут храниться, создав репозитории ......
+
+Листинг 3 - Репрезиторий для класса "Футболист"
+    public class FootballerStorage
+    {
+        private readonly Dictionary<int, Footballer> _Footballers = new();
+
+        public Footballer Create(Footballer footballer)
+        {
+            _Footballers.Add(footballer.Id, footballer);
+            return footballer;
+        }
+
+        public Footballer Read(int footballerId)
+        {
+            return _Footballers[footballerId];
+        }
+
+        public Footballer Update(int footballerId, Footballer newFootballer)
+        {
+            _Footballers[footballerId] = newFootballer;
+            return _Footballers[footballerId];
+        }
+
+        public bool Delete(int footballerId)
+        {
+            return _Footballers.Remove(footballerId); 
+        }
+    }
+
+Листинг 4 - Общеее хранилище
+    public class Storage
+    {
+        public static readonly FootballerStorage footballerStorage = new();
+        public static readonly ManagerStorage managerStorage = new();
+        public static readonly ClubStorage clubStorage = new();
+        public static readonly AcceptTheTransetionStorage attStorage = new();
+        public static readonly ManagerSuggestionStorage managersuggestionStorage = new();
+        public static readonly ContractStorage contractStorage = new();
+        public static readonly AcceptContractStorage acceptcontractStorage = new();
+
+    }
+    
+Разработали набор web-методов, включая 4 базисные операции CRUD, для каждой сущности, отражающих предметную область. Примеры контроллеров для классов "Футболист" и "Менеджер" представлены на листингах 5 и 6.
+
+Листинг 5 - Контроллер для класса "Футболист"
+[ApiController]
+    [Route("/footballer")]
+    public class FootballerController : ControllerBase
+    {
+        [HttpPut("Create")]
+        public Footballer Create(Footballer footballer)
+        {
+            Storage.footballerStorage.Create(footballer);
+            return Storage.footballerStorage.Read(footballer.Id);
+        }
+
+        [HttpGet("Read")]
+        public Footballer Read(int Id)
+        {
+            return Storage.footballerStorage.Read(Id);
+        }
+
+        [HttpPatch("Update")]
+        public Footballer Update(int Id, Footballer newFootballer)
+        {
+            return Storage.footballerStorage.Update(Id, newFootballer);
+        }
+
+        [HttpDelete("Delete")]
+        public bool Delete(int Id)
+        {
+            return Storage.footballerStorage.Delete(Id);
+        }
+    }
+  
+Листинг 6 - Контроллер для класса "Менеджер"
+    [ApiController]
+    [Route("/manager")]
+    public class ManagerController : ControllerBase
+    {
+        [HttpPut("Create")]
+        public Manager Create(Manager manager)
+        {
+            Storage.managerStorage.Create(manager);
+            return Storage.managerStorage.Read(manager.Id);
+        }
+
+        [HttpGet("Read")]
+        public Manager Read(int Id)
+        {
+            return Storage.managerStorage.Read(Id);
+        }
+
+        [HttpPatch("Update")]
+        public Manager Update(int Id, Manager newManager)
+        {
+            return Storage.managerStorage.Update(Id, newManager);
+        }
+
+        [HttpDelete("Delete")]
+        public bool Delete(int Id)
+        {
+            return Storage.managerStorage.Delete(Id);
+        }
+    }
+  
 ***
 ## 4 Тестирование <a name ="тестирование"></a>
 ***
