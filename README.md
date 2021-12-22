@@ -57,25 +57,26 @@ Transfermarkt работает засчет системы база данных
 Участник - это множество логически связанных ролей, исполняемых при взаимодействии с прецедентами или сущностями (система, подсистема или класс). Участником может быть человек или другая система, подсистема или класс, которые представляют нечто вне сущности. Графически участник изображается “человечком”.
 
 Прецедент - описание множества последовательных событий (включая варианты), выполняемых системой, которые приводят к наблюдаемому участником результату. Прецедент представляет поведение сущности, описывая взаимодействие между участниками и системой. Прецедент не показывает, “как” достигается некоторый результат, а только “что” именно выполняется. Прецеденты обозначаются очень простым образом - в виде эллипса, внутри которого указано его название.[5]
-![image](https://user-images.githubusercontent.com/85898336/146952795-0ee910f8-d36d-449f-9b47-073025f3c675.png)
-                                                   
-                        Рисунок 1 - Диаграмма вариантов использования
 
-На основе USE-CASE диаграммы разрабатвается DFD диаграмма, которая наглядно отображает течение информации в пределах системы.(см. рисунок 2)
-![image](https://user-images.githubusercontent.com/85898336/146951679-989f55e8-0073-46b4-8d72-9b9c68e94adf.png)
-                                                 
-                        Рисунок 2 - Диаграмма потоков данных
-
+<p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/146952795-0ee910f8-d36d-449f-9b47-073025f3c675.png"</p>
+  <p align="center">Рисунок 1 - Диаграмма вариантов использования</p> 
+  На основе USE-CASE диаграммы разрабатвается DFD диаграмма, которая наглядно отображает течение информации в пределах системы.(см. рисунок 2)  
+<p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/146951679-989f55e8-0073-46b4-8d72-9b9c68e94adf.png"</p>
+  <p align="center">Рисунок 2 - Диаграмма потоков данных</p>
+<p align="center">  
 На основе DFD диаграммы проектируется схема «сущность-связь» (ER-диаграмма), где показано, как разные «сущности» (люди, объекты, концепции и так далее) связаны между собой внутри системы.(см. рисунок 3)
-![image](https://user-images.githubusercontent.com/85898336/146952001-ee0da253-9c94-4532-abb0-f0a3cae2bfa2.png)
-                                   
-                        Рисунок 3 - Диаграмма «сущность-связь»
+<p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/146952001-ee0da253-9c94-4532-abb0-f0a3cae2bfa2.png"</p>
+  <p align="center">Рисунок 3 - Диаграмма «сущность-связь»</p> 
+    
 ***
 ## 3.2 Реализация системы
 На основании ER-диаграммы создали классы. Примеры классов "Футболист" и "Менеджер" представленны на листингах 1 и 2 соответственно.
 
 Листинг 1 - Класс "Футболист"
-
+```csharp
     public class Footballer
     {
         public int Id { get; set; }
@@ -87,21 +88,23 @@ Transfermarkt работает засчет системы база данных
         public string Country { get; set; }
         public decimal Money { get; set; }
     }
+```
             
 
 Листинг 2 - Класс "Менеджер"
-
+```csharp
     public class Manager
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string SecondName { get; set; }
     }
-
+```
+    
 Затем отпределили где они будут храниться, создав репозитории ......
 
 Листинг 3 - Репрезиторий для класса "Футболист"
-
+```csharp
     public class FootballerStorage
     {
         private readonly Dictionary<int, Footballer> _Footballers = new();
@@ -128,9 +131,9 @@ Transfermarkt работает засчет системы база данных
             return _Footballers.Remove(footballerId); 
         }
     }
-
+```
 Листинг 4 - Общеее хранилище
-
+```csharp
     public class Storage
     {
         public static readonly FootballerStorage footballerStorage = new();
@@ -142,11 +145,12 @@ Transfermarkt работает засчет системы база данных
         public static readonly AcceptContractStorage acceptcontractStorage = new();
 
     }
+```
     
 Разработали набор web-методов, включая 4 базисные операции CRUD, для каждой сущности, отражающих предметную область. Примеры контроллеров для классов "Футболист" и "Менеджер" представлены на листингах 5 и 6.
 
 Листинг 5 - Контроллер для класса "Футболист"
-
+```csharp
     [ApiController]
     [Route("/footballer")]
     public class FootballerController : ControllerBase
@@ -176,9 +180,9 @@ Transfermarkt работает засчет системы база данных
             return Storage.footballerStorage.Delete(Id);
         }
     }
-  
+```
 Листинг 6 - Контроллер для класса "Менеджер"
-
+```csharp
     [ApiController]
     [Route("/manager")]
     public class ManagerController : ControllerBase
@@ -208,93 +212,94 @@ Transfermarkt работает засчет системы база данных
             return Storage.managerStorage.Delete(Id);
         }
     }
-  
+``` 
+    
 ***
 ## 4 Тестирование <a name ="тестирование"></a>
 После запуска программы открывается страница Swagger UI со списком сущностей и операций над ними (см. рисунок 4).
-![image](https://user-images.githubusercontent.com/85898336/147094212-8ab8d7d5-87ad-4837-ae5d-c1e15b6a94a6.png)
-
-                        Рисунок 4 - Cтраница Swagger UI
+<p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/147094212-8ab8d7d5-87ad-4837-ae5d-c1e15b6a94a6.png"</p> 
+<p align="center">
+Рисунок 4 - Cтраница Swagger UI</p> 
                                                 
 Проверка работы методов CRUD (Create - создание, Read - чтение, Update - обновление, Delete - удаление) в сущности Footballer (см. рисунок 5).
-![image](https://user-images.githubusercontent.com/85898336/147095124-f1433517-183f-42ad-a844-80630f9cd6fe.png)
-                                                
-                        Рисунок 5 -Проверка работы методов CRUD
+<img src = "https://user-images.githubusercontent.com/85898336/147095124-f1433517-183f-42ad-a844-80630f9cd6fe.png"</p> 
+ <p align="center">Рисунок 5 -Проверка работы методов CRUD</p> 
                                                 
 1. Create позволяет добавлять новые строки в вашу таблицу (см. рисунок 6).
-![image](https://user-images.githubusercontent.com/85898336/147095394-2072a0b6-256a-4c56-9d45-21845df33707.png)
-                                                
-                        Рисунок 6 - Окно метода создания
+   <p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/147095394-2072a0b6-256a-4c56-9d45-21845df33707.png"</p> 
+     <p align="center">Рисунок 6 - Окно метода создания</p> 
                                                 
 Ввод необходимых данных об футболисте в соответствующие поля (см. рисунок 7).
-![image](https://user-images.githubusercontent.com/85898336/147095721-866bad2b-4af6-4891-96f9-a7321e1f207c.png)
-
-                         Рисунок 7 - Работа с методом создания
+       <p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/147095721-866bad2b-4af6-4891-96f9-a7321e1f207c.png"</p> 
+<p align="center">Рисунок 7 - Работа с методом создания</p> 
                                                 
 После успешного выполнения операции сервер выдаёт ответ (см. рисунок 8).
-![image](https://user-images.githubusercontent.com/85898336/147095885-e7315cba-2771-4ad7-a329-352732a796f5.png)
-
-                        Рисунок 8 - Результат выполнения операции создания
+  <p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/147095885-e7315cba-2771-4ad7-a329-352732a796f5.png"</p> 
+<p align="center">Рисунок 8 - Результат выполнения операции создания</p> 
                                                 
 2.Функция чтения Read похожа на функцию поиска, поскольку позволяет извлекать определенные записи и считывать их значения (см. рисунок 9).
-![image](https://user-images.githubusercontent.com/85898336/147096119-db9f6c43-86fc-4d99-a6a8-c8de21ceed40.png)
-
-                        Рисунок 9 - Окно функции чтения
+  <p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/147096119-db9f6c43-86fc-4d99-a6a8-c8de21ceed40.png"</p> 
+<p align="center">Рисунок 9 - Окно функции чтения</p> 
 
 Считывание информации об уже созданном футболисте по его Id (см. рисунок 10).
-![image](https://user-images.githubusercontent.com/85898336/147096372-37789cd7-b1ee-4daa-9435-0ad3d17de20b.png)
-
-                        Рисунок 10 - Работа с методом чтения
+  <p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/147096372-37789cd7-b1ee-4daa-9435-0ad3d17de20b.png"</p> 
+<p align="center">Рисунок 10 - Работа с методом чтения</p> 
                                                 
 После выполнения операции сервер выдаёт информацию об футболисте, которая была создана в Create (см. рисунок 11).
-![image](https://user-images.githubusercontent.com/85898336/147096833-7cc4bc80-7f4d-4fe8-8a4e-2e049c51c1ab.png)
-
-                        Рисунок 11 - Результат выполнения операции чтения
+  <p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/147096833-7cc4bc80-7f4d-4fe8-8a4e-2e049c51c1ab.png"</p> 
+<p align="center">Рисунок 11 - Результат выполнения операции чтения</p> 
                                                 
 3.Update, редактирование записи (см. рисунок 12). Используется для изменения существующих записей в базе данных.
-![image](https://user-images.githubusercontent.com/85898336/147096990-474ab976-59e5-4336-a869-7f066a45c0eb.png)
-
-                        Рисунок 12 - Окно метода обновления
+  <p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/147096990-474ab976-59e5-4336-a869-7f066a45c0eb.png"</p> 
+<p align="center">Рисунок 12 - Окно метода обновления</p> 
                                                 
 Изменение информации об футболисте, для этого сначала нужно ввести его номер и затем новые данные (см. рисунок 13).
-![image](https://user-images.githubusercontent.com/85898336/147098947-70c6074f-6316-42f1-bb38-7d9d744f1211.png)
-
-                        Рисунок 13 - Работа с методом обновления
+  <p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/147098947-70c6074f-6316-42f1-bb38-7d9d744f1211.png"</p> 
+<p align="center">Рисунок 13 - Работа с методом обновления</p> 
                                                 
 После выполнения операции сервер выдаёт новую информацию о том же футболисте (см. рисунок 14).
-![image](https://user-images.githubusercontent.com/85898336/147099068-8b96b74c-0640-4b66-b78b-7fe548e7fad0.png)
-
-                        Рисунок 14 - Результат выполнения операции обновления
+  <p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/147099068-8b96b74c-0640-4b66-b78b-7fe548e7fad0.png"</p> 
+<p align="center">Рисунок 14 - Результат выполнения операции обновления</p> 
 
 Функцией read проверка вышеуказанной операции. После срабатывания сервер выдает новую информацию об футболисте (см. рисунок 15).
-![image](https://user-images.githubusercontent.com/85898336/147099304-1145706b-8768-486d-b939-778731ee0801.png)
-                                                
-                        Рисунок 15 - Результат выполнения операции чтения после обновления данных
+  <p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/147099304-1145706b-8768-486d-b939-778731ee0801.png"</p> 
+<p align="center">Рисунок 15 - Результат выполнения операции чтения после обновления данных</p> 
                                                 
 4.Delete - используется для удаления записи по Id. Если операция удаления сработает успешно, то ответ сервера будет "true", иначе "false" (см. рисунок 16).
-![image](https://user-images.githubusercontent.com/85898336/147099461-70f39463-b728-461c-84d0-2223ffe4a472.png)
-
-                        Рисунок 16 - Окно метода удаления
+  <p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/147099461-70f39463-b728-461c-84d0-2223ffe4a472.png"</p> 
+<p align="center">Рисунок 16 - Окно метода удаления</p> 
                                                 
 Удаление футболиста по его Id (см. рисунок 17).
-![image](https://user-images.githubusercontent.com/85898336/147099570-250dc756-65af-4a83-8c48-694bbe20911f.png)
-
-                        Рисунок 17 - Работа с методом удаления
+  <p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/147099570-250dc756-65af-4a83-8c48-694bbe20911f.png"</p> 
+<p align="center">Рисунок 17 - Работа с методом удаления</p> 
                                                 
 После выполнения операции ответ сервера (см. рисунок 18).
-![image](https://user-images.githubusercontent.com/85898336/147099664-f126d2b3-f08c-4011-859e-19fd21efd1a2.png)
-                                                
-                        Рисунок 18 - Раезультат выполнения метода удаления
+  <p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/147099664-f126d2b3-f08c-4011-859e-19fd21efd1a2.png"</p> 
+<p align="center">Рисунок 18 - Раезультат выполнения метода удаления</p> 
                                                 
 Проверка вышеописанного действия с помощью read, считывание информацию об удалённом покупателе (см. рисунок 19).
-![image](https://user-images.githubusercontent.com/85898336/147099819-d816a0c0-bb3a-4677-aab2-857d708e07f2.png)
-                                                
-                        Рисунок 19 - Работа с операцией чтения
+  <p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/147099819-d816a0c0-bb3a-4677-aab2-857d708e07f2.png"</p> 
+<p align="center">Рисунок 19 - Работа с операцией чтения</p> 
                                                 
 После срабатывания программа не выдаёт информации об этом покупателе (см. рисунок 20).
-![image](https://user-images.githubusercontent.com/85898336/147100202-5f8c4792-88b8-408f-8e35-16f2580c2806.png)
-
-                        Рисунок 20 - Результат выполнения операции чтения после удаления данных
+    <p align="center">
+<img src = "https://user-images.githubusercontent.com/85898336/147100202-5f8c4792-88b8-408f-8e35-16f2580c2806.png"</p> 
+<p align="center">Рисунок 20 - Результат выполнения операции чтения после удаления данных</p> 
                         
 ***
 ## Заключение
